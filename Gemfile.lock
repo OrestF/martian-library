@@ -182,7 +182,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   graphiql-rails
-  graphql (~> 1.9)
+  graphql (~> 1.12, >= 1.12.6)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
