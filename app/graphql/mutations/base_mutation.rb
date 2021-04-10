@@ -12,7 +12,17 @@ module Mutations
     end
   end
 end
-
+# query Users {
+#   users {
+#     id
+#     fullName
+#     items {
+#       id
+#       title
+#       description
+#     }
+#   }
+# }
 # query Me {
 #   me {
 #     id

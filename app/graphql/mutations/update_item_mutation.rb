@@ -1,9 +1,9 @@
 module Mutations
   class UpdateItemMutation < Mutations::BaseMutation
     argument :id, ID, required: true
-    argument :attributes, Types::ItemAttributes, required: true
+    argument :attributes, ::Types::Attributes::ItemAttr, required: true
 
-    field :item, Types::ItemType, null: true
+    field :item, ::Types::Models::Item, null: true
     field :errors, Types::ValidationErrorsType, null: true
 
     def resolve(id:, attributes:)

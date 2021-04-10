@@ -3,7 +3,7 @@ module Mutations
     argument :email, String, required: true
 
     field :token, String, null: true
-    field :user, Types::UserType, null: true
+    field :user, Types::Models::User, null: true
 
     def resolve(email:)
       user = User.find_by!(email: email)

@@ -7,13 +7,17 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    # TODO: remove me
     field :items,
-          [Types::ItemType],
+          [Types::Models::Item],
           null: false,
           description: 'Returns a list of items in the martian library'
 
-    field :me, Types::UserType, null: true
+    field :users,
+          [Types::Models::User],
+          null: false,
+          description: 'Returns a list of users in the martian library'
+
+    field :me, Types::Models::User, null: true
 
     def me
       context[:current_user]
@@ -21,6 +25,10 @@ module Types
 
     def items
       Item.all.lazy_preload(:user)
+    end
+
+    def users
+      User.all.lazy_preload(:items)
     end
   end
 end

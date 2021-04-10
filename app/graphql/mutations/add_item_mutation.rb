@@ -1,8 +1,8 @@
 module Mutations
   class AddItemMutation < Mutations::BaseMutation
-    argument :attributes, Types::ItemAttributes, required: true # new argument
+    argument :attributes, ::Types::Attributes::ItemAttr, required: true # new argument
 
-    field :item, Types::ItemType, null: true
+    field :item, ::Types::Models::Item, null: true
     field :errors, Types::ValidationErrorsType, null: true
 
     def resolve(attributes:)
